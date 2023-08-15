@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * str_len - Calculates the length of a string
+ * @str: Str to check its length
+ * Return: Lentgh of dtring
+ */
+
 int str_len(char *str)
 {
 	int len = 0;
@@ -9,6 +15,11 @@ int str_len(char *str)
 	return (len);
 }
 
+/**
+ * str_dup - Function that duplicates string
+ * @s: Str to duplicate
+ * Return: Duplicated string
+ */
 
 char *str_dup(char *s)
 {
@@ -32,6 +43,13 @@ char *str_dup(char *s)
 
 	return (cpy_s);
 }
+
+/**
+ * str_cat - Function that concatenates two string
+ * @dest: Destination of string
+ * @src: String source
+ * Return: Concatenated string
+ */
 char *str_cat(char *dest, char *src)
 {
 	int x = 0;
@@ -50,6 +68,12 @@ char *str_cat(char *dest, char *src)
 	return (dest);
 }
 
+/**
+ * str_cpy - Function to copy string
+ * @dest: Destination to copy to
+ * @src: String to copy
+ * Return: Copied string
+ */
 char *str_cpy(char *dest, char *src)
 {
 	int x = 0;
