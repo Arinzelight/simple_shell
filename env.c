@@ -8,14 +8,14 @@
  */
 int env(char **args)
 {
-	int n = 0;
+	int index = 0;
 	(void)(**args);
 
-	while (environ[i])
+	while (environ[index])
 	{
-		write(STDOUT_FILENO, environ[i], str_len(environ[i]));
+		write(STDOUT_FILENO, environ[index], str_len(environ[index]));
 		write(STDOUT_FILENO, "\n", 1);
-		n++;
+		index++;
 	}
 	return (-1);
 }
