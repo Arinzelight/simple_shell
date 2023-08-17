@@ -82,9 +82,9 @@ $ ./hsh
 
 ($) /bin/ls
 
-cd.c   exec_args.c  hsh                 line_split.c  main.h         non_interactive.c  read_line.c  stirngs.c  TEST_SUITE
+cd.c exec_args.c hsh line_split.c main.h non_interactive.c read_line.c stirngs.c TEST_SUITE
 
-env.c  exit.c       interactive_mode.c  main.c        new_process.c  read_input.c       README.md    string.c   which_path.c
+env.c exit.c interactive_mode.c main.c new_process.c read_input.c README.md string.c which_path.c
 
 $ 
 
@@ -99,9 +99,9 @@ Non-Interactive Mode:
 
 $ echo "/bin/ls" | ./hsh
 
-cd.c   exec_args.c  hsh      line_split.c  main.h         non_interactive.c  read_line.c  stirngs.c  TEST_SUITE
+cd.c exec_args.c hsh line_split.c main.h non_interactive.c read_line.c stirngs.c TEST_SUITE
 
-env.c  exit.c       interactive_mode.c  main.c    new_process.c  read_input.c   README.md    string.c   which_path.c
+env.c exit.c interactive_mode.c main.c new_process.c read_input.c README.md string.c which_path.c
 
 $
 
