@@ -79,19 +79,30 @@ Usage Examples
 Interactive Mode:
 
 $ ./hsh
+
 ($) /bin/ls
+
 cd.c   exec_args.c  hsh                 line_split.c  main.h         non_interactive.c  read_line.c  stirngs.c  TEST_SUITE
+
 env.c  exit.c       interactive_mode.c  main.c        new_process.c  read_input.c       README.md    string.c   which_path.c
+
 $ 
+
 ($)
+
 ($) exit
+
 $
+
 
 Non-Interactive Mode:
 
 $ echo "/bin/ls" | ./hsh
-cd.c   exec_args.c  hsh                 line_split.c  main.h         non_interactive.c  read_line.c  stirngs.c  TEST_SUITE
-env.c  exit.c       interactive_mode.c  main.c        new_process.c  read_input.c       README.md    string.c   which_path.c
+
+cd.c   exec_args.c  hsh      line_split.c  main.h         non_interactive.c  read_line.c  stirngs.c  TEST_SUITE
+
+env.c  exit.c       interactive_mode.c  main.c    new_process.c  read_input.c   README.md    string.c   which_path.c
+
 $
 
 
