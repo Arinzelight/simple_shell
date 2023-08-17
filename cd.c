@@ -17,7 +17,7 @@ int my_cd(char **args)
 	{
 		if (chdir(args[1]) != 0)
 		{
-			perror("error in own_cd.c: chdir\n");
+			perror("error in chdir..\n");
 			return (-1);
 		}
 	}
