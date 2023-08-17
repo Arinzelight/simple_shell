@@ -1,20 +1,34 @@
 0x16. C - Simple Shell
 
-This is a simple shell project that implements a basic command-line interface, allowing users to interact with the system by executing various commands. The shell supports both interactive and non-interactive modes, providing a user-friendly interface for running commands and managing processes.
+This is a simple shell project that implements a basic command-line interface,
+allowing users to interact with the system by executing various commands. 
+The shell supports both interactive and non-interactive modes, 
+providing a user-friendly interface for running commands and managing processes.
 
 Features
-*Interactive and Non-Interactive Modes: The shell can be run interactively, where it displays a prompt for users to input commands one by one. It can also be used in non-interactive mode, where commands are provided as arguments, allowing for script-based execution.
 
-*Command Execution: The shell supports execution of a wide range of system commands. It can execute external programs and built-in commands.
+* Interactive and Non-Interactive Modes: The shell can be run interactively, 
+where it displays a prompt for users to input commands one by one. 
+It can also be used in non-interactive mode, where commands are provided 
+as arguments, allowing for script-based execution.
 
-*Built-in Commands: Certain commands are built directly into the shell and are executed without creating a separate process. Examples of built-in commands include exit, which terminates the shell, and cd, which changes the current working directory.
+* Command Execution: The shell supports execution of a wide range of system commands. 
+It can execute external programs and built-in commands.
 
-*Process Management: The shell can create, manage, and monitor processes using system calls like fork, execve, and process control functions like wait and waitpid.
+* Built-in Commands: Certain commands are built directly into the shell and 
+are executed without creating a separate process. Examples of built-in commands 
+include exit, which terminates the shell, and cd, which changes the current working directory.
 
-*File System Interaction: Various file-related operations are supported, such as opening, reading, and writing files. Additionally, the shell can manipulate directories, read directory contents, and access file status information.
+* Process Management: The shell can create, manage, and monitor processes using
+ system calls like fork, execve, and process control functions like wait and waitpid.
+
+* File System Interaction: Various file-related operations are supported, 
+such as opening, reading, and writing files. Additionally, the shell can manipulate
+directories, read directory contents, and access file status information.
 
 
 Allowed Functions
+
 The following system calls and library functions are allowed for use in this project:
 
 access (man 2 access)
@@ -73,6 +87,7 @@ $
 $
 
 Non-Interactive Mode:
+
 $ echo "/bin/ls" | ./hsh
 cd.c   exec_args.c  hsh                 line_split.c  main.h         non_interactive.c  read_line.c  stirngs.c  TEST_SUITE
 env.c  exit.c       interactive_mode.c  main.c        new_process.c  read_input.c       README.md    string.c   which_path.c
@@ -81,4 +96,5 @@ $
 
 
 Credits
-This project was created by [EZINWA ARINZE &  Chiamaka Ogbodo] as a part of [C-low_level programme/Project] at [ALX].
+
+This project was created by [Ezinwa Arinze &  Chiamaka Ogbodo] as a part of [ALX-low_level_ programming/Project] at [ALX].
