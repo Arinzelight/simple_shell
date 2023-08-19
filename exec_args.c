@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * exec_args - map if command is a builtin or a process
- * @args: command and its arguments (flags)
+ * exec_args - function to execute builtin args
+ * @args: command to execute
  *
- * Return: 1 on success, otherwise 0
+ * Return: executed command
  */
 
 int exec_args(char **args)
@@ -15,17 +15,17 @@ int exec_args(char **args)
 
 	size_t i = 0;
 
+	
+	/*check if no args was passed*/
 
 	if (args[0] == NULL)
 	{
-		/*---handle empty command---*/
 		return (-1);
 	}
-	/*-----if command is builtin-------*/
 
+	/*check if command is inbuilt*/
 	for (; i < sizeof(builtin_funcs) / sizeof(char *); i++)
 	{
-		/*if the command matches execute the builtin command*/
 		if (str_cmp(args[0], builtin_funcs[i]) == 0)
 		{
 			return ((*builtin_func[i])(args));

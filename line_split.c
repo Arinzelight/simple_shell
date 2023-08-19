@@ -1,18 +1,20 @@
 #include "main.h"
 
 /**
- * line_split - splits a string into multiple strings
- * @line_string: string to be split
+ * line_split - function to tokenize input string
+ * @line_string: string to be tokenize
  *
- * Return: pointer that points to the new array
+ * Return: pointer to the first token
  */
 
 char **line_split(char *line_string)
 {
 	int buf_size = 64;
-	int i = 0;
-	char **tokens = malloc(buf_size * sizeof(char *));
+	int count = 0;
+	char **tokens;
 	char *token;
+
+	tokens = malloc(buf_size * sizeof(char *));
 
 	if (tokens == NULL)
 	{
@@ -22,14 +24,13 @@ char **line_split(char *line_string)
 	token = strtok(line_string, TOK_DELIM);
 	while (token != NULL)
 	{
-		/*---handle comments----*/
 
 		if (token[0] == '#')
 			break;
-		tokens[i] = token;
-		i++;
+		tokens[count] = token;
+		count++;
 
-		if (i >= buf_size)
+		if (count >= buf_size)
 		{
 			buf_size += buf_size;
 			tokens = realloc(tokens, buf_size * sizeof(char));
@@ -41,7 +42,7 @@ char **line_split(char *line_string)
 		}
 		token = strtok(NULL, TOK_DELIM);
 	}
-	tokens[i] = NULL;
+	tokens[count] = NULL;
 	return (tokens);
 
 }
