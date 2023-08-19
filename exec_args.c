@@ -15,7 +15,7 @@ int exec_args(char **args)
 
 	size_t i = 0;
 
-	
+
 	/*check if no args was passed*/
 
 	if (args[0] == NULL)
