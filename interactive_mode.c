@@ -28,21 +28,13 @@ void interactive_mode(void)
 			exit(0);
 		}
 		status = exec_args(args);
-		/*--------- free memory-------*/
-		free(line_string);
-		free(args);
-
-		/*--------exit with status---------*/
 
 
 		free(line_string);
 		free(args);
 
 
-		if (status >= 0)
-		{
-			exit(status);
-		}
+
 
 	} while (status == -1);
 }
