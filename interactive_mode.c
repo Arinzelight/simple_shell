@@ -14,17 +14,17 @@ void interactive_mode(void)
 
 
 	do {
-		printf("$ ");
+		_putstr("$ ");
 
 		line_string = read_input();
 		args = line_split(line_string);
 		status = exec_args(args);
 
-		/*--------- free memory-------*/
+	
 		free(line_string);
 		free(args);
 
-		/*--------exit with status---------*/
+
 		if (status >= 0)
 		{
 			exit(status);

@@ -22,7 +22,7 @@ int new_process(char **args)
 
 		if (av == NULL)
 		{
-			printf("path not found");
+			perror("");
 		}
 
 		child_pid = fork();
@@ -31,7 +31,7 @@ int new_process(char **args)
 			exe = execve(av, args, environ);
 			if (exe == -1)
 			{
-				perror("execve failed\n");
+				perror("Command not found");
 			}
 			exit(EXIT_FAILURE);
 		}
