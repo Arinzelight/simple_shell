@@ -16,7 +16,7 @@ void non_interactive_mode(void)
 		line_string = read_line();
 		args = line_split(line_string);
 		status = exec_args(args);
-	
+
 		/* avoid memory leaks */
 		free(line_string);
 		free(args);

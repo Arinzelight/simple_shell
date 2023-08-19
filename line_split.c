@@ -33,7 +33,7 @@ char **line_split(char *line_string)
 		{
 			buf_size += buf_size;
 			tokens = realloc(tokens, buf_size * sizeof(char));
-			if (tokens == NULL) 
+			if (tokens == NULL)
 			{
 				_putstr("reallocation failed");
 				exit(EXIT_FAILURE);

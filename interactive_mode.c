@@ -18,16 +18,19 @@ void interactive_mode(void)
 
 		line_string = read_input();
 		args = line_split(line_string);
-		status = exec_args(args);
 
+		/* Check if the user entered the 'exit' command*/
+		if (args[0] != NULL && strcmp(args[0], "exit") == 0)
+		{
+			free(line_string);
+			free(args);
+			exit(0);
+		}
+		status = exec_args(args);
 		/*--------- free memory-------*/
 		free(line_string);
 		free(args);
 
 		/*--------exit with status---------*/
-		if (status >= 0)
-		{
-			exit(status);
-		}
 	} while (status == -1);
 }

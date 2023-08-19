@@ -10,9 +10,11 @@
 int exec_args(char **args)
 {
 	char *builtin_funcs[] = {"env", "cd", "exit",};
+
 	int (*builtin_func[])(char **) = {&env, &my_cd, &my_exit, NULL};
 
 	size_t i = 0;
+
 
 	if (args[0] == NULL)
 	{

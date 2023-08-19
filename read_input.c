@@ -13,7 +13,7 @@ char *read_input(void)
 	ssize_t chars_read;
 
 	chars_read = getline(&line_buffer, &buf_Size, stdin);
-	
+
 	if (chars_read == -1)
 	{
 		free(line_buffer);
@@ -22,9 +22,10 @@ char *read_input(void)
 	}
 
 
-	/*if (getline(&line_buffer, &buf_Size, stdin) == -1)
+	/**
+	 * if (getline(&line_buffer, &buf_Size, stdin) == -1)
 	{
-	
+
 		if (feof(stdin))
 		{
 			free(line_buffer);
@@ -36,7 +37,8 @@ char *read_input(void)
 			perror("");
 			exit(EXIT_FAILURE);
 		}
-	}*/
-	
+	}
+	*/
+
 	return (line_buffer);
 }
