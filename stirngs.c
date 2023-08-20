@@ -14,16 +14,17 @@ int _putchar(char z)
 /**
  * _putstr - Function to print string
  * @str: string to print
+ * @fd: file descriptor
  * Return: Number of strings printed
  */
 
-int _putstr(char *str)
+int _putstr(char *str, int fd)
 {
 	int count = 0, i = 0;
 
 	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
+		write(fd, &str[i], 1);
 		count += 1;
 		i++;
 	}

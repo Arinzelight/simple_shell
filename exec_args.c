@@ -9,6 +9,7 @@
 
 int exec_args(char **args)
 {
+	static int cmd_num = 0;
 	char *builtin_funcs[] = {"env", "cd", "exit",};
 
 	int (*builtin_func[])(char **) = {&env, &my_cd, &my_exit, NULL};
@@ -32,5 +33,6 @@ int exec_args(char **args)
 		}
 	}
 	/* create a new process */
-	return (new_process(args));
+	cmd_num++;
+	return (new_process(args, cmd_num));
 }

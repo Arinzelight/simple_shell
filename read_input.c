@@ -17,7 +17,6 @@ char *read_input(void)
 	if (chars_read == -1)
 	{
 		free(line_buffer);
-		perror("");
 		exit(EXIT_FAILURE);
 	}
 

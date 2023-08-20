@@ -18,7 +18,7 @@ char **line_split(char *line_string)
 
 	if (tokens == NULL)
 	{
-		_putstr("memory allocation error\n");
+		perror("memory allocation error\n");
 		exit(EXIT_FAILURE);
 	}
 	token = strtok(line_string, TOK_DELIM);
@@ -36,7 +36,7 @@ char **line_split(char *line_string)
 			tokens = realloc(tokens, buf_size * sizeof(char));
 			if (tokens == NULL)
 			{
-				_putstr("reallocation failed");
+				perror("reallocation failed");
 				exit(EXIT_FAILURE);
 			}
 		}

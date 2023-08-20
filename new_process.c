@@ -1,39 +1,37 @@
 #include "main.h"
-
 /**
- * new_process - creates a new process (fork)
- * @args: array of strings that contains the command
- * and its argument (flags)
- *
+ * new_process - Function that executes command
+ * @args: command to execute
+ * @cmd_num: comand number
  * Return: 1 if success, 0 otherwise
  */
-
-int new_process(char **args)
+int new_process(char **args, int cmd_num)
 {
 	pid_t child_pid;
-	int exe;
-	char *cmd, *av;
-	int status;
+	int exe, status;
+	char *cmd, *av,  *prog_name = "./hsh";
 
 	if (args != NULL)
 	{
 		cmd = args[0];
 		av = find_path(cmd);
-
 		if (av == NULL)
 		{
-			perror("");
+			print_err(cmd_num, prog_name);
+			_putstr(args[0], STDERR_FILENO);
+			_putstr(": not found\n", STDERR_FILENO);
+			return (127);
 		}
-
 		child_pid = fork();
 		if (child_pid == 0)
 		{
 			exe = execve(av, args, environ);
 			if (exe == -1)
 			{
-				perror("Command not found");
+				print_err(cmd_num, prog_name);
+				_putstr(strerror(errno), STDERR_FILENO);
+				write(STDERR_FILENO, strerror(errno), str_len(strerror(errno)));
 			}
-			exit(EXIT_FAILURE);
 		}
 		else if (child_pid < 0)
 		{

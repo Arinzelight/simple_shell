@@ -14,7 +14,7 @@ void interactive_mode(void)
 
 
 	do {
-		_putstr("$ ");
+		write(STDOUT_FILENO, PROMPT, 2);
 
 		line_string = read_input();
 		args = line_split(line_string);
@@ -27,7 +27,7 @@ void interactive_mode(void)
 			free(args);
 			exit(0);
 		}
-		status = exec_args(args);
+		exec_args(args);
 
 
 		free(line_string);
