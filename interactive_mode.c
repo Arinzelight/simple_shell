@@ -8,7 +8,7 @@
 
 void interactive_mode(void)
 {
-	char *line_string;
+	char *buffer;
 	char **args;
 	int status = -1;
 
@@ -16,21 +16,21 @@ void interactive_mode(void)
 	do {
 		write(STDOUT_FILENO, PROMPT, 2);
 
-		line_string = read_input();
-		args = line_split(line_string);
+		buffer = read_input();
+		args = tokenize(buffer);
 
 
 		/* Check if the user entered the 'exit' command*/
 		if (args[0] != NULL && strcmp(args[0], "exit") == 0)
 		{
-			free(line_string);
+			free(buffer);
 			free(args);
 			exit(0);
 		}
-		exec_args(args);
+		exec_builtin(args);
 
 
-		free(line_string);
+		free(buffer);
 		free(args);
 
 

@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * exec_args - function to execute builtin args
+ * exec_builtin - function to execute builtin args
  * @args: command to execute
  *
  * Return: executed command
  */
 
-int exec_args(char **args)
+int exec_builtin(char **args)
 {
-	static int cmd_num = 0;
+	static int cmd_num;
 	char *builtin_funcs[] = {"env", "cd", "exit",};
 
 	int (*builtin_func[])(char **) = {&env, &my_cd, &my_exit, NULL};
@@ -34,5 +34,5 @@ int exec_args(char **args)
 	}
 	/* create a new process */
 	cmd_num++;
-	return (new_process(args, cmd_num));
+	return (execute_cmd(args, cmd_num));
 }

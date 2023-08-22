@@ -16,10 +16,10 @@
 void interactive_mode(void);
 void non_interactive_mode(void);
 char *read_input(void);
-char **line_split(char *line_string);
-int exec_args(char **args);
+char **tokenize(char *buff);
+int exec_builtin(char **args);
 char *read_stream(void);
-int new_process(char **args, int cmd_num);
+int execute_cmd(char **args, int cmd_num);
 char *read_line(void);
 int main(void);
 char *find_path(char *arg);
@@ -28,7 +28,7 @@ int print_num(unsigned int n);
 
 
 /*-------MACROS--------*/
-#define TOK_DELIM " \t\r\n\a\""
+#define DELIMETER " \t\r\n\a\""
 #define PROMPT "$ "
 
 extern char **environ;

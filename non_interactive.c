@@ -8,17 +8,17 @@
 
 void non_interactive_mode(void)
 {
-	char *line_string;
+	char *buffer;
 	char **args;
 	int status = -1;
 
 	do {
-		line_string = read_line();
-		args = line_split(line_string);
-		status = exec_args(args);
+		buffer = read_line();
+		args = tokenize(buffer);
+		status = exec_builtin(args);
 
 		/* avoid memory leaks */
-		free(line_string);
+		free(buffer);
 		free(args);
 
 		/* exit with status */

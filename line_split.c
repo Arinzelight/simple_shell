@@ -1,27 +1,27 @@
 #include "main.h"
 
 /**
- * line_split - function to tokenize input string
- * @line_string: string to be tokenize
+ * tokenize - function to tokenize input string
+ * @buff: string to be tokenize
  *
  * Return: pointer to the first token
  */
 
-char **line_split(char *line_string)
+char **tokenize(char *buff)
 {
-	int buf_size = 64;
+	int size_of_buffer = 64;
 	int count = 0;
 	char **tokens;
 	char *token;
 
-	tokens = malloc(buf_size * sizeof(char *));
+	tokens = malloc(size_of_buffer * sizeof(char *));
 
 	if (tokens == NULL)
 	{
 		perror("memory allocation error\n");
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(line_string, TOK_DELIM);
+	token = strtok(buff, DELIMETER);
 	while (token != NULL)
 	{
 
@@ -30,17 +30,17 @@ char **line_split(char *line_string)
 		tokens[count] = token;
 		count++;
 
-		if (count >= buf_size)
+		if (count >= size_of_buffer)
 		{
-			buf_size += buf_size;
-			tokens = realloc(tokens, buf_size * sizeof(char));
+			size_of_buffer += size_of_buffer;
+			tokens = realloc(tokens, size_of_buffer * sizeof(char));
 			if (tokens == NULL)
 			{
 				perror("reallocation failed");
 				exit(EXIT_FAILURE);
 			}
 		}
-		token = strtok(NULL, TOK_DELIM);
+		token = strtok(NULL, DELIMETER);
 	}
 	tokens[count] = NULL;
 	return (tokens);

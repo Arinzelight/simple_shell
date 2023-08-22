@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * new_process - Function that executes command
+ * execute_cmd - Function that executes command
  * @args: command to execute
  * @cmd_num: comand number
  * Return: 1 if success, 0 otherwise
  */
-int new_process(char **args, int cmd_num)
+int execute_cmd(char **args, int cmd_num)
 {
 	pid_t child_pid;
 	int exe, status;
