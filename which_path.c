@@ -35,7 +35,7 @@ char *find_path(char *arg)
 				pathTok = strtok(NULL, delimeter);
 			}
 		}
-		/*free(cpy_path);*/
+		free(cpy_path);
 
 		/*check if the arg exist*/
 		if (stat(arg, &args_line) == 0)
