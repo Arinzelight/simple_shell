@@ -10,7 +10,7 @@ char *find_path(char *arg)
 	char *pathTok, *fileName;
 	struct stat args_line;
 
-	path = getenv("PATH");
+	path = get_env("PATH");
 	if (path != NULL)
 	{
 		cpy_path = str_dup(path);
@@ -35,7 +35,7 @@ char *find_path(char *arg)
 				pathTok = strtok(NULL, delimeter);
 			}
 		}
-		/*free(cpy_path);*/
+		free(cpy_path);
 
 		/*check if the arg exist*/
 		if (stat(arg, &args_line) == 0)
