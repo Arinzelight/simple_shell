@@ -18,21 +18,18 @@ void interactive_mode(void)
 
 		buffer = read_input();
 		args = tokenize(buffer);
+		status = exec_builtin(args);
 
-
-		/* Check if the user entered the 'exit' command*/
-		if (args[0] != NULL && strcmp(args[0], "exit") == 0)
-		{
-			free(buffer);
-			free(args);
-			exit(0);
-		}
-		exec_builtin(args);
-
+		/*========== free memory========*/
 
 		free(buffer);
 		free(args);
+		/*========== exit with status ========*/
 
+		if (status >= 0)
+		{
+			exit(status);
+		}
 
 
 
