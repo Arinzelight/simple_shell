@@ -34,9 +34,7 @@ int execute_cmd(char **args, int cmd_num)
 			}
 		}
 		else if (child_pid < 0)
-		{
 			perror("fork failed");
-		}
 		else
 		{
 			do {
